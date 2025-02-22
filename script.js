@@ -96,7 +96,7 @@ class DartScoreApp {
                 this.player2ScoreElement.textContent = this.player2Total;
                 this.updateAverage(2);
             } else {
-                alert('Player 2 wins!');
+                alert('Spieler 2 wins!');
                 this.resetGame();
             }
         }
