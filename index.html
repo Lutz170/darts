@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gézas Darts Score Counter</title>
+    <title>Géza Gart - Darts Score Counter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Gézas Dart-Zähler</h1>
-        
+        <h1>Géza Gart</h1>
+        <h2>Darts Score Counter</h2>
+
         <div class="game-settings">
             <div class="settings-row">
                 <label for="legs-select">Best of Legs:</label>
@@ -25,24 +26,6 @@
                     <option value="single" selected>Einfach Checkout</option>
                     <option value="double">Double Checkout</option>
                 </select>
-            </div>
-        </div>
-
-        <div class="players">
-            <div class="player player1 active">
-                <input type="text" class="player-name" value="Spieler 1">
-                <div class="score">501</div>
-                <div class="stats">
-                    <div>Average: <span class="average">-</span></div>
-                </div>
-            </div>
-
-            <div class="player player2">
-                <input type="text" class="player-name" value="Spieler 2">
-                <div class="score">501</div>
-                <div class="stats">
-                    <div>Average: <span class="average">-</span></div>
-                </div>
             </div>
         </div>
 
@@ -72,6 +55,25 @@
         </div>
 
         <div class="error-message"></div>
+
+        <div class="players">
+            <div class="player player1 active">
+                <input type="text" class="player-name" value="Spieler 1">
+                <div class="score">501</div>
+                <div class="stats">
+                    <div>Average: <span class="average">-</span></div>
+                </div>
+            </div>
+
+            <div class="player player2">
+                <input type="text" class="player-name" value="Spieler 2">
+                <div class="score">501</div>
+                <div class="stats">
+                    <div>Average: <span class="average">-</span></div>
+                </div>
+            </div>
+        </div>
+
         <div class="winner-message"></div>
 
         <div class="history">
