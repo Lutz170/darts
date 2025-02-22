@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Géza Dart - Darts Score Counter</title>
+    <title>Géza Gart - Darts Score Counter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -32,15 +32,15 @@
         <div class="throw-inputs">
             <div class="throw">
                 <label>1. Wurf</label>
-                <input type="number" min="0" max="180">
+                <input type="number" id="throw1" min="0" max="180">
             </div>
             <div class="throw">
                 <label>2. Wurf</label>
-                <input type="number" min="0" max="180">
+                <input type="number" id="throw2" min="0" max="180">
             </div>
             <div class="throw">
                 <label>3. Wurf</label>
-                <input type="number" min="0" max="180">
+                <input type="number" id="throw3" min="0" max="180">
             </div>
         </div>
 
@@ -49,9 +49,9 @@
         </div>
 
         <div class="buttons">
-            <button class="submit-round">Runde eintragen</button>
-            <button class="undo-round" disabled>Rückgängig</button>
-            <button class="new-game">Neues Spiel</button>
+            <button id="submit-round" class="submit-round">Runde eintragen</button>
+            <button id="undo-round" class="undo-round" disabled>Rückgängig</button>
+            <button id="new-game" class="new-game">Neues Spiel</button>
         </div>
 
         <div class="error-message"></div>
