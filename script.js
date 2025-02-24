@@ -48,6 +48,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const legsSelect = document.getElementById('legs-select');
     const checkoutSelect = document.getElementById('checkout-select');
 
+    // Funktion um zu prüfen, ob es ein mobiles Gerät ist
+    function isMobileDevice() {
+        return (window.innerWidth <= 600);
+    }
+
+    // Für mobile Geräte Tastatur schließen nach Eingabe
+    function blurInputOnMobile() {
+        if (isMobileDevice()) {
+            throw1Input.blur();
+            throw2Input.blur();
+            throw3Input.blur();
+        }
+    }
+
     // Rundensumme berechnen
     function calculateRoundTotal() {
         const throws = [
@@ -131,6 +145,9 @@ document.addEventListener('DOMContentLoaded', function() {
         throw3Input.value = '';
         calculateRoundTotal();
         errorMessageDiv.textContent = '';
+        
+        // Auf mobilen Geräten Tastatur ausblenden
+        blurInputOnMobile();
     }
 
     // Rückgängig machen
@@ -265,6 +282,23 @@ document.addEventListener('DOMContentLoaded', function() {
         updateUI();
     }
 
+    // Event Listener für Enter-Taste
+    function addEnterKeySupport() {
+        [throw1Input, throw2Input, throw3Input].forEach((input, index, array) => {
+            input.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    // Zum nächsten Feld oder Submit
+                    if (index < array.length - 1) {
+                        array[index + 1].focus();
+                    } else {
+                        blurInputOnMobile();
+                        submitRound();
+                    }
+                }
+            });
+        });
+    }
+
     // Event Listener
     throw1Input.addEventListener('input', calculateRoundTotal);
     throw2Input.addEventListener('input', calculateRoundTotal);
@@ -298,6 +332,9 @@ document.addEventListener('DOMContentLoaded', function() {
             players[index].name = this.value;
         });
     });
+
+    // Enter-Taste Support hinzufügen
+    addEnterKeySupport();
 
     // Initial UI update
     updateUI();
