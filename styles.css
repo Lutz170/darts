@@ -7,7 +7,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: #f0f2f5;
+    background-color: #e0f2e9; /* Freundliches Grün */
 }
 
 .container {
@@ -201,16 +201,70 @@ button {
     border-bottom: 1px solid #eee;
 }
 
+/* Mobile Optimierungen */
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    .game-settings {
+        padding: 10px;
+    }
+    
     .players {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .player {
+        padding: 10px;
     }
     
     .throw-inputs {
-        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    
+    .throw input {
+        padding: 15px 8px;
+        font-size: 1.4em;
+        border-radius: 10px;
+        height: 60px; /* Größere Touch-Ziele */
+    }
+    
+    .round-total {
+        font-size: 1.2em;
     }
     
     .buttons {
         flex-direction: column;
+        gap: 8px;
+    }
+    
+    button {
+        padding: 15px;
+        font-size: 1.1em;
+        margin: 0;
+        height: 60px; /* Größere Touch-Ziele */
+    }
+    
+    .history {
+        padding: 10px;
+    }
+    
+    .history-list .entry {
+        font-size: 0.9em;
     }
 }
