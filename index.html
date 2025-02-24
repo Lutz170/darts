@@ -3,35 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Géza spielt Dart</title>
+    <title>Géza Gart - Darts Score Counter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Dart Score App</h1>
-        <div class="settings">
-            <label for="starting-score">Starting Score:</label>
-            <input type="number" id="starting-score" value="501" min="1">
-            <label for="game-type">Game Type:</label>
-            <select id="game-type">
-                <option value="double">Double Out</option>
-                <option value="single">Single Out</option>
-            </select>
-        </div>
-        <div class="scores">
-            <div id="player1" class="player">
-                <h2>Player 1: <span id="player1-score">501</span></h2>
-                <p>Average: <span id="player1-avg">0</span></p>
+        <h1>Géza Gart</h1>
+        <h2>Darts Score Counter</h2>
+
+        <div class="game-settings">
+            <div class="settings-row">
+                <label for="legs-select">Best of Legs:</label>
+                <select id="legs-select" class="legs-selector">
+                    <option value="1">1 Leg</option>
+                    <option value="3">Best of 3</option>
+                    <option value="5">Best of 5</option>
+                </select>
             </div>
-            <div id="player2" class="player">
-                <h2>Player 2: <span id="player2-score">501</span></h2>
-                <p>Average: <span id="player2-avg">0</span></p>
+            <div class="settings-row">
+                <label for="checkout-select">Checkout-Modus:</label>
+                <select id="checkout-select" class="checkout-selector">
+                    <option value="single" selected>Einfach Checkout</option>
+                    <option value="double">Double Checkout</option>
+                </select>
             </div>
         </div>
-        <div class="input-area">
-            <input type="number" id="score-input" min="0" max="180">
-            <button id="enter-score">Enter Score</button>
-            <button id="undo-score">Undo</button>
+
+        <div class="throw-inputs">
+            <div class="throw">
+                <label>1. Wurf</label>
+                <input type="number" id="throw1" min="0" max="180">
+            </div>
+            <div class="throw">
+                <label>2. Wurf</label>
+                <input type="number" id="throw2" min="0" max="180">
+            </div>
+            <div class="throw">
+                <label>3. Wurf</label>
+                <input type="number" id="throw3" min="0" max="180">
+            </div>
+        </div>
+
+        <div class="round-total">
+            Rundensumme: <span>0</span>
+        </div>
+
+        <div class="buttons">
+            <button id="submit-round" class="submit-round">Runde eintragen</button>
+            <button id="undo-round" class="undo-round" disabled>Rückgängig</button>
+            <button id="new-game" class="new-game">Neues Spiel</button>
+        </div>
+
+        <div class="error-message"></div>
+
+        <div class="players">
+            <div class="player player1 active">
+                <input type="text" class="player-name" value="Spieler 1">
+                <div class="score">501</div>
+                <div class="stats">
+                    <div>Average: <span class="average">-</span></div>
+                </div>
+            </div>
+
+            <div class="player player2">
+                <input type="text" class="player-name" value="Spieler 2">
+                <div class="score">501</div>
+                <div class="stats">
+                    <div>Average: <span class="average">-</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="winner-message"></div>
+
+        <div class="history">
+            <h3>Spielverlauf</h3>
+            <div class="history-list"></div>
         </div>
     </div>
     <script src="script.js"></script>
